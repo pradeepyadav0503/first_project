@@ -1,6 +1,8 @@
 import React from "react";
 import man_logo from "../imgs/delivery.png";
 import Popular from "./Popular";
+import DisplayPro from "./DisplayPro.jsx";
+
 function Home() {
   return (
     
@@ -21,6 +23,10 @@ function Home() {
         </div>
         <Popular/>
       </div>
+      <div className="mt-4 bg-gray-100">
+      <DisplayPro/>
+      </div>
+
       
     </>
   );

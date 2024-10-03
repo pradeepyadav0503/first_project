@@ -5,6 +5,8 @@ import orders from './orders.png'
 import search from './search.png'
 import user from './user.png'
 import logo2 from './logo2.png'
+import kalaDil from './heart.png'
+import laalDil from './red-heart.png'
 
  const img ={
     heart,
@@ -13,6 +15,8 @@ import logo2 from './logo2.png'
     orders,
     search,
     user,
-    logo2
+    logo2,
+    kalaDil,
+    laalDil
 }
 export default img

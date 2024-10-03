@@ -1,14 +1,18 @@
 import React from "react";
 // import Logo from "../assets/logo.png";
 import header_img from "../assets/imgs.js";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const wishlistCount = useSelector((state)=>state.wishlist.wishlist.length)
+
   return (
     <>
       <div className="bg-gray-900 flex text-white px-8 p-5 justify-between items-center">
         <div className="flex justify-around space-x-24">
         <div>
-          <img className="w-28" src={header_img.logo} alt="img" />
+          <Link to="/"><img className="w-28" src={header_img.logo} alt="img" /></Link>
         </div>
         <div className="flex">
           <input
@@ -24,9 +28,16 @@ function Header() {
         </div>
         </div>
         <div className="flex gap-5 ">
-          <img className="w-8 h-8 cursor-pointer" src={header_img.heart} alt="heart" />
-          <img className="w-8 h-8 cursor-pointer" src={header_img.added} alt="added" />
-          <img className="w-8 h-8 cursor-pointer" src={header_img.orders} alt="order" />
+       <div className="relative">
+       <Link to="/wishlist">  <img className="w-8 h-8 cursor-pointer" src={header_img.heart} alt="heart" />
+         <span className="absolute -top-2 -right-2 text-xs bg-red-600 text-white rounded-full h-5 w-5 flex items-center justify-center">
+            {wishlistCount}
+          </span>
+         </Link>
+       </div>
+         
+       <Link to="/cart"><img className="w-8 h-8 cursor-pointer" src={header_img.added} alt="added" /></Link>
+          <Link to="/order"><img className="w-8 h-8 cursor-pointer" src={header_img.orders} alt="order" /></Link>
           <img className="w-8 h-8 cursor-pointer" src={header_img.user} alt="user" />
         </div>
       </div>
